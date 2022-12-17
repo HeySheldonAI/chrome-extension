@@ -13,9 +13,6 @@
 		},
 		"default_title": "Sheldon - Access the web with just a single click."
 	},
-	"background": {
-		"service_worker": "background.js"
-	},
 	"icons": {
 		"16": "images/icon-16.png",
 		"24": "images/icon-24.png",
@@ -31,6 +28,15 @@
 			}
 		}
 	},
+	"content_scripts": [
+		{
+			"js": ["content.js"],
+			"matches": ["<all_urls>"]
+		}
+	],
+	"background": {
+		"service_worker": "background.js"
+	},
 	"author": "adityakrishnaoff@gmail.com",
-	"permissions": ["activeTab", "scripting", "tabs"]
+	"permissions": ["activeTab", "scripting", "storage"]
 }

@@ -1,25 +1,36 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+	"manifest_version": 3,
+	"name": "Sheldon",
+	"description": "Sheldon enables you to quickly and easily access the internet with just a single click.",
+	"version": "0.1.0",
+	"action": {
+		"default_icon": {
+			"16": "images/icon-16.png",
+			"24": "images/icon-24.png",
+			"32": "images/icon-24.png",
+			"48": "images/icon-48.png",
+			"128": "images/icon-128.png"
+		},
+		"default_title": "Sheldon - Access the web with just a single click."
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+	"icons": {
+		"16": "images/icon-16.png",
+		"24": "images/icon-24.png",
+		"32": "images/icon-24.png",
+		"48": "images/icon-48.png",
+		"128": "images/icon-128.png"
+	},
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Ctrl+U",
+				"mac": "Command+U"
+			}
+		}
+	},
+	"author": "adityakrishnaoff@gmail.com",
+	"permissions": ["activeTab", "scripting", "tabs"]
 }

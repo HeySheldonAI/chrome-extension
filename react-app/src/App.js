@@ -34,7 +34,11 @@ const App = () => {
 		} else setIsSearchPromptOpen(!isSearchPromptOpen);
 	});
 
-	return isSearchPromptOpen ? <Search /> : isHelperPopupOpen ? <Popup /> : null;
+	return isSearchPromptOpen ? (
+		<Search toggleFunction={setIsSearchPromptOpen} />
+	) : isHelperPopupOpen ? (
+		<Popup toggleFunction={setIsHelperPopupOpen} />
+	) : null;
 };
 
 export default App;

@@ -6,7 +6,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.tsx?$/,
+				test: /\.(tsx|js|jsx|ts)$/,
 				use: [
 					{
 						loader: 'ts-loader',
@@ -28,6 +28,13 @@ module.exports = {
 					'sass-loader',
 				],
 			},
+			{
+				test: /\.(jpe?g|png|gif|svg|webp)$/i,
+				loader: 'file-loader',
+				options: {
+					name: '/images/[name].[ext]',
+				},
+			},
 		],
 	},
 	resolve: {
@@ -36,5 +43,6 @@ module.exports = {
 	output: {
 		filename: 'content.js',
 		path: path.resolve(__dirname, '..', 'react-extension'),
+		publicPath: '',
 	},
 };

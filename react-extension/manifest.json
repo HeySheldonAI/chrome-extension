@@ -38,7 +38,7 @@
 		"service_worker": "background.js"
 	},
 	"author": "adityakrishnaoff@gmail.com",
-	"permissions": ["activeTab", "scripting", "storage"],
+	"permissions": ["activeTab", "storage"],
 	"web_accessible_resources": [
 		{
 			"resources": ["/Assets/*"],

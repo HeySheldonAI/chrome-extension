@@ -1,5 +1,5 @@
-import decryptData from './decryptData';
-import encryptData from './encryptData';
+import decryptData from './DecryptData';
+import encryptData from './EncryptData';
 
 const setData = async (key: string, data: any) => {
 	const encryptedData = encryptData(data);

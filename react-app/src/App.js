@@ -1,29 +1,15 @@
-import { useState, useEffect } from 'react';
-// import { getData, setData } from './helpers/localStorage';
-import Search from './Search/Search';
-import Popup from './Popup/Popup';
+import { useState } from 'react';
+
+import './App.css';
+import SearchPrompt from './Components/SearchPrompt/SearchPrompt';
+import HelperPopup from './Components/HelperPopup/HelperPopup';
 
 const App = () => {
 	const [isSearchPromptOpen, setIsSearchPromptOpen] = useState(false);
-	const [isHelperPopupOpen, setIsHelperPopupOpen] = useState(false);
+	const [isHelperPopupOpen, setIsHelperPopupOpen] = useState(true);
 
-	useEffect(() => {
-		const currentLink = document.getElementsByTagName('body')[0].baseURI
-			? document.getElementsByTagName('body')[0].baseURI
-			: '';
-
-		// get website name from currentWebsite
-		const websiteName = currentLink.split('/')[2];
-		if (!websiteName || websiteName === '') {
-			return;
-		}
-
-		// TODO: DO SOME PROCESSING FOR THE HELPER POPUP
-
-		setIsHelperPopupOpen(true);
-	}, []);
-
-	chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+	// eslint-disable-next-line no-undef
+	chrome.runtime.onMessage.addListener((message) => {
 		if (message.action !== 'clicked') return;
 
 		if (isHelperPopupOpen) {
@@ -35,9 +21,12 @@ const App = () => {
 	});
 
 	return isSearchPromptOpen ? (
-		<Search toggleFunction={setIsSearchPromptOpen} />
+		<SearchPrompt toggleSearchPrompt={(val) => setIsSearchPromptOpen(val)} />
 	) : isHelperPopupOpen ? (
-		<Popup toggleFunction={setIsHelperPopupOpen} />
+		<HelperPopup
+			toggleHelperPrompt={(val) => setIsHelperPopupOpen(val)}
+			toggleSearchPrompt={(val) => setIsSearchPromptOpen(val)}
+		/>
 	) : null;
 };
 

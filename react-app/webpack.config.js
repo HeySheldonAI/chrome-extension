@@ -18,12 +18,17 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.s[ac]ss$/i,
+				test: /\.(css|scss|sass)$/i,
 				use: [
 					// Creates `style` nodes from JS strings
 					'style-loader',
 					// Translates CSS into CommonJS
-					'css-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							url: false,
+						},
+					},
 					// Compiles Sass to CSS
 					'sass-loader',
 				],
@@ -35,10 +40,17 @@ module.exports = {
 					name: '/images/[name].[ext]',
 				},
 			},
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/i,
+				loader: 'file-loader',
+				options: {
+					name: '/fonts/[name].[ext]',
+				},
+			},
 		],
 	},
 	resolve: {
-		extensions: ['.tsx', '.ts', '.js'],
+		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 	},
 	output: {
 		filename: 'content.js',

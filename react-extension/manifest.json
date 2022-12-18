@@ -41,8 +41,9 @@
 	"permissions": ["activeTab", "scripting", "storage"],
 	"web_accessible_resources": [
 		{
-			"resources": ["/images/*"],
-			"matches": ["<all_urls>"]
+			"resources": ["/Assets/*"],
+			"matches": ["<all_urls>"],
+			"use_dynamic_url": true
 		}
 	]
 }

@@ -15,11 +15,13 @@
 		"react-dom": "^18.2.0",
 		"react-scripts": "5.0.1",
 		"typescript": "^4.4.2",
+		"url-loader": "^4.1.1",
 		"web-vitals": "^2.1.0"
 	},
 	"scripts": {
+		"assets": "cp -r ./src/Assets ../react-extension",
 		"start": "react-scripts start",
-		"build": "webpack",
+		"build": "yarn assets && webpack",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},

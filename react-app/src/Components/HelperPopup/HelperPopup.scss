@@ -1,0 +1,60 @@
+// animate the popup to slide in from the right
+@keyframes slideIn {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.popup__container {
+	position: fixed;
+	top: 20vh;
+	right: 0;
+	z-index: 100;
+	animation: slideIn 0.5s ease-in-out;
+
+	.popup__close_container {
+		cursor: pointer;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background-color: #b1c41a;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 1000000;
+		top: 10px;
+		right: 8px;
+
+		.popup__close_icon {
+			width: 1rem;
+			height: 1rem;
+		}
+	}
+
+	.popup__main {
+		cursor: pointer;
+		background-color: #262e2c;
+		width: 120px;
+		height: 80px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px 0 0 10px;
+
+		.popup__main_icon {
+			width: 64px;
+			height: 64px;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+
+// 262E2C
+// B1C41A

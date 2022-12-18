@@ -19,3 +19,10 @@
 	font-family: 'PoppinsSemiBold';
 	src: url('chrome-extension://fimakglndffnifgenheaogoeokjifkcf/Assets/Fonts/Poppins-SemiBold.ttf');
 }
+
+img {
+	user-select: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-webkit-user-drag: none;
+}

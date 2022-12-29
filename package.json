@@ -19,11 +19,9 @@
 		"web-vitals": "^2.1.0"
 	},
 	"scripts": {
-		"assets": "cp -r ./src/Assets ../react-extension",
-		"start": "react-scripts start",
+		"assets": "mkdir build && cp -r ./src/Assets ./build && cp ./manifest.json ./build",
 		"build": "yarn assets && webpack",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"start": "react-scripts start"
 	},
 	"eslintConfig": {
 		"extends": [

@@ -10,7 +10,7 @@ const App = () => {
 
 	// eslint-disable-next-line no-undef
 	chrome.runtime.onMessage.addListener((message) => {
-		if (message.action !== 'clicked') return;
+		if (message.action !== 'sheldon_toggle_search_prompt') return;
 
 		if (isHelperPopupOpen) {
 			if (!isSearchPromptOpen) {

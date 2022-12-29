@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-	entry: './src/index.tsx',
+	entry: {
+		content: './src/index.tsx',
+		background: './src/background.ts',
+	},
 	mode: 'production',
 	module: {
 		rules: [
@@ -53,8 +56,8 @@ module.exports = {
 		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 	},
 	output: {
-		filename: 'content.js',
-		path: path.resolve(__dirname, '..', 'react-extension'),
+		filename: '[name].js',
+		path: path.join(__dirname, '/build'),
 		publicPath: '',
 	},
 };

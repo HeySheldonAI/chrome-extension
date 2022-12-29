@@ -18,7 +18,7 @@
   position: fixed;
   top: 20vh;
   right: 0;
-  z-index: 100;
+  z-index: 1000000;
   -webkit-animation: slideIn 0.5s ease-in-out;
           animation: slideIn 0.5s ease-in-out;
   -webkit-user-select: none;

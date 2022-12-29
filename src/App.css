@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'PoppinsLight';
+	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/Assets/Fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+	font-family: 'PoppinsRegular';
+	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/Assets/Fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'PoppinsMedium';
+	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/Assets/Fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+	font-family: 'PoppinsSemiBold';
+	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/Assets/Fonts/Poppins-SemiBold.ttf');
+}
+
+img {
+	user-select: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-webkit-user-drag: none;
+}

@@ -27,7 +27,7 @@ const HelperPopup = ({ toggleHelperPrompt, toggleSearchPrompt }) => {
 			<div className="popup__main" onClick={handleOpen} title="Sheldon">
 				<img
 					src={chrome.runtime.getURL('Assets/Images/Main.webp')}
-					alt="Search"
+					alt="Ask Sheldon"
 					className="popup__main_icon"
 				/>
 			</div>

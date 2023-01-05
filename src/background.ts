@@ -70,6 +70,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	}
 });
 
-// https://accounts.google.com/o/oauth2/auth?client_id=379131991034-vmdhks21u4nbobccqmnqdoem8rj23juc.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fjjpcchlkabbeeghocolljenmdeeckkoi.chromiumapp.org%2F&response_type=token&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email
+chrome.runtime.onMessageExternal.addListener(
+	(request, sender, sendResponse) => {
+		if (request.action === 'sheldon_connect') {
+			sendResponse({
+				responseType: 'success',
+				responseUniqueCode: 'sheldon_connection_success',
+			});
+
+			return true;
+		}
+	}
+);
 
 export {};

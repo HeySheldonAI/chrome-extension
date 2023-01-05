@@ -19,7 +19,7 @@
 		"web-vitals": "^2.1.0"
 	},
 	"scripts": {
-		"assets": "mkdir build && cp -r ./src/Assets ./build && cp ./manifest.json ./build",
+		"assets": "rm -rf build && mkdir build && cp -r ./src/Assets ./build && cp ./manifest.json ./build",
 		"build": "yarn assets && webpack",
 		"start": "react-scripts start"
 	},

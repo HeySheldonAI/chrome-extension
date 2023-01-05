@@ -40,6 +40,9 @@
 	"author": "adityakrishnaoff@gmail.com",
 	"permissions": ["activeTab", "storage", "cookies"],
 	"host_permissions": ["https://user.heysheldon.com/"],
+	"externally_connectable": {
+		"matches": ["https://user.heysheldon.com/*"]
+	},
 	"web_accessible_resources": [
 		{
 			"resources": ["/Assets/*"],

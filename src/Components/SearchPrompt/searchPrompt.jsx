@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import './SearchPrompt.scss';
+import './searchPrompt.scss';
 
 const SearchPrompt = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);

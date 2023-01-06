@@ -1,6 +1,6 @@
 import CryptoJS from 'crypto-js';
 
-const decryptData = (data: string) => {
+const decryptData = (data) => {
 	const decryptedData = CryptoJS.AES.decrypt(
 		data,
 		'5H*Rm7$%hfalesdr4eiwo654@5@Egv35d4f$$2123989822487jsadhf@!87'

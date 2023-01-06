@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-import './HelperPopup.scss';
+import './helperPopup.scss';
 
 const HelperPopup = ({ toggleHelperPrompt, toggleSearchPrompt }) => {
 	const handleOpen = () => {
@@ -19,14 +18,14 @@ const HelperPopup = ({ toggleHelperPrompt, toggleSearchPrompt }) => {
 				title="close"
 			>
 				<img
-					src={chrome.runtime.getURL('Assets/Images/Cross.svg')}
+					src={chrome.runtime.getURL('assets/images/cross.svg')}
 					alt="Close"
 					className="popup__close_icon"
 				/>
 			</div>
 			<div className="popup__main" onClick={handleOpen} title="Sheldon">
 				<img
-					src={chrome.runtime.getURL('Assets/Images/Main.webp')}
+					src={chrome.runtime.getURL('assets/images/main.webp')}
 					alt="Ask Sheldon"
 					className="popup__main_icon"
 				/>

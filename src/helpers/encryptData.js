@@ -1,6 +1,6 @@
 import CryptoJS from 'crypto-js';
 
-const encryptData = (data: string | object) => {
+const encryptData = (data) => {
 	const dataString = typeof data === 'string' ? data : JSON.stringify(data);
 	const encryptedData = CryptoJS.AES.encrypt(
 		dataString,

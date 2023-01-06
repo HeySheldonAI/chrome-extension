@@ -1,21 +1,21 @@
 @font-face {
 	font-family: 'PoppinsLight';
-	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/Assets/Fonts/Poppins-Light.ttf');
+	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/assets/fonts/poppinsLight.ttf');
 }
 
 @font-face {
 	font-family: 'PoppinsRegular';
-	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/Assets/Fonts/Poppins-Regular.ttf');
+	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/assets/fonts/poppinsRegular.ttf');
 }
 
 @font-face {
 	font-family: 'PoppinsMedium';
-	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/Assets/Fonts/Poppins-Medium.ttf');
+	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/assets/fonts/poppinsMedium.ttf');
 }
 
 @font-face {
 	font-family: 'PoppinsSemiBold';
-	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/Assets/Fonts/Poppins-SemiBold.ttf');
+	src: url('chrome-extension://jjpcchlkabbeeghocolljenmdeeckkoi/assets/fonts/poppinsSemiBold.ttf');
 }
 
 img {

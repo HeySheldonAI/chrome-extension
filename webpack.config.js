@@ -2,20 +2,17 @@ const path = require('path');
 
 module.exports = {
 	entry: {
-		content: './src/index.tsx',
-		background: './src/background.ts',
+		content: './src/index.jsx',
+		background: './src/background.js',
 	},
 	mode: 'production',
 	module: {
 		rules: [
 			{
-				test: /\.(tsx|js|jsx|ts)$/,
+				test: /\.(js|jsx)$/,
 				use: [
 					{
-						loader: 'ts-loader',
-						options: {
-							compilerOptions: { noEmit: false },
-						},
+						loader: 'babel-loader',
 					},
 				],
 				exclude: /node_modules/,
@@ -53,7 +50,7 @@ module.exports = {
 		],
 	},
 	resolve: {
-		extensions: ['.tsx', '.ts', '.js', '.jsx'],
+		extensions: ['.js', '.jsx'],
 	},
 	output: {
 		filename: '[name].js',

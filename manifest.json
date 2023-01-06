@@ -5,20 +5,20 @@
 	"description": "The #1 AI-Powered Chrome Extension for Boosting Productivity and Saving 80% of Your Time on the Internet.",
 	"action": {
 		"default_icon": {
-			"16": "/Assets/Icons/icon-16.png",
-			"24": "/Assets/Icons/icon-24.png",
-			"32": "/Assets/Icons/icon-24.png",
-			"48": "/Assets/Icons/icon-48.png",
-			"128": "/Assets/Icons/icon-128.png"
+			"16": "/assets/icons/icon16.png",
+			"24": "/assets/icons/icon24.png",
+			"32": "/assets/icons/icon32.png",
+			"48": "/assets/icons/icon48.png",
+			"128": "/assets/icons/icon128.png"
 		},
 		"default_title": "Sheldon - AI Assistant that Saves 80% of your Time on the Internet"
 	},
 	"icons": {
-		"16": "/Assets/Icons/icon-16.png",
-		"24": "/Assets/Icons/icon-24.png",
-		"32": "/Assets/Icons/icon-24.png",
-		"48": "/Assets/Icons/icon-48.png",
-		"128": "/Assets/Icons/icon-128.png"
+		"16": "/assets/icons/icon16.png",
+		"24": "/assets/icons/icon24.png",
+		"32": "/assets/icons/icon32.png",
+		"48": "/assets/icons/icon48.png",
+		"128": "/assets/icons/icon128.png"
 	},
 	"author": "adityakrishnaoff@gmail.com",
 	"background": {
@@ -47,7 +47,7 @@
 	"permissions": ["activeTab", "storage", "cookies"],
 	"web_accessible_resources": [
 		{
-			"resources": ["/Assets/*"],
+			"resources": ["/assets/*"],
 			"matches": ["<all_urls>"],
 			"use_dynamic_url": true
 		}

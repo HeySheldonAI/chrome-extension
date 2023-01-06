@@ -82,5 +82,3 @@ chrome.runtime.onMessageExternal.addListener(
 		}
 	}
 );
-
-export {};

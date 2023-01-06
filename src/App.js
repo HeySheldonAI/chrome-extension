@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import './App.css';
-import SearchPrompt from './Components/SearchPrompt/SearchPrompt';
-import HelperPopup from './Components/HelperPopup/HelperPopup';
+import SearchPrompt from './components/searchPrompt/searchPrompt';
+import HelperPopup from './components/helperPopup/helperPopup';
 
 const App = () => {
 	const [isSearchPromptOpen, setIsSearchPromptOpen] = useState(false);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import LoginPage from './loginPage/login.jsx';
+import SearchInterface from './SearchInterface/searchInterface.jsx';
 
 import './searchPrompt.scss';
 
@@ -42,9 +43,7 @@ const SearchPrompt = () => {
 			{!isLoggedIn ? (
 				<LoginPage />
 			) : (
-				<div className="google_login" onClick={handleLogout}>
-					Logout
-				</div>
+				<SearchInterface token={token} />
 			)}
 		</div>
 	);

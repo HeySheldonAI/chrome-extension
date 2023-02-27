@@ -1,5 +1,7 @@
 import './LoginPage.scss';
 
+
+
 const LoginPage = () => {
     const handleClick = () => {
         chrome.runtime.sendMessage({action: "sheldon_redirect"});
@@ -8,9 +10,13 @@ const LoginPage = () => {
     return (
         <div class="content">
             <img class="icon" src={chrome.runtime.getURL('assets/icons/icon48.png')} />
-            <h1 class="heading">Welcome to Sheldon</h1>
+            <div class="heading">Welcome to Sheldon</div>
             <p class="text">AI Assistant that Saves 80% of your Time on the Internet</p>
-            <button onClick={handleClick}>Click Here to Login</button>
+            <button className='login-button' onClick={handleClick}>
+               <img className='google-img' src={chrome.runtime.getURL('assets/icons/google.svg')} /> Continue with Google
+                </button>
+            <img className='messy-img' src={chrome.runtime.getURL('assets/icons/unboxing.svg')} />  
+            <img className='unboxing-img' src={chrome.runtime.getURL('assets/icons/messy.svg')} />  
         </div>
     );
 }

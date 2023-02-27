@@ -1,6 +1,11 @@
 .icon {
     border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    margin: 10px;
+
 }
+
 
 .content {
     padding: 20px;
@@ -9,13 +14,59 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+    font-family: 'Poppins', sans-serif;
+
+
 
     .text {
-        width: 40%;
+        width: 70%;
+        color: #565959;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: center;
+        margin-top: 4px;
+        margin-bottom:12px;
     }
 
     .heading {
         font-weight: bold;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 30px;
+        text-align: center;
+        color: #000;
+        margin-top: 8px;
+        
     }
+
+    .login-button {
+        border-radius: 62px;
+        padding: 7px 20px;
+        border: solid 3px #09BC8F;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px;
+        cursor: pointer;
+        margin: 4px;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+
+        .google-img{
+            margin-right: 8px;
+        }
+    }
+}
+
+.messy-img{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.unboxing-img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }

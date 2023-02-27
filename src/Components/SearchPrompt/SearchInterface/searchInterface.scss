@@ -1,0 +1,184 @@
+.option{
+    border-top-left-radius: 6px;
+    text-align: center;
+    color: #09BC8F;
+    padding: 1px 0;
+}
+
+.vl{
+    height: 37px;
+    width: 1px;
+    background-color: lightgray;
+}
+
+.input-field{
+    width:-webkit-fill-available;
+    padding: 7px;
+    outline: none;
+}
+
+.search-button{
+    width: 53px;
+    margin: 0;
+    border-top-right-radius: 6px;
+    padding: 1px 0;
+}
+
+.search-suggestion{
+    height: 45px;
+    font-size: 12px;
+    padding: 0 8px;
+    justify-content: center;
+
+    .div1{
+        color: #8A8C8C;
+        padding: 0 2px;
+    }
+
+    .div2{
+        color: #565959;
+       
+        
+        .suggestion-button{
+            border: solid 1px #09BC8F;
+            border-radius: 45px;
+            margin-right: 13px;
+            font-size: 10px;
+            align-items: center;
+        }
+    }
+
+
+}
+
+.sheldon-response{
+    height: 200px;
+    padding: 0 8px;
+
+    .response-heading{
+        font-size: 12px;
+        color: #565959;
+        padding: 8px;
+    }
+
+    .actual-response{
+        padding: 8px;
+    }
+}
+
+.footer{
+    height: 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    color: #09BC8F;
+
+    .setting{
+        cursor: pointer;
+    }
+}
+
+
+.border-none{
+    border:none;
+}
+
+.h-37px{
+    height: 37px;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.search-button{
+    background: #09BC8F;
+
+}
+
+
+.hl{
+    background: lightgray ;
+    height: 1px;
+}
+
+
+
+// setting page
+
+.header{
+    padding: 1px 8px;
+    align-items: center;
+    .back{
+        justify-self: flex-start;
+        margin-right: 200px;
+        cursor: pointer;
+        color: #565959;
+
+    }
+
+    .heading{
+        justify-self: center;
+        color: #09BC8F;
+    }
+}
+
+.body{
+    height: 200px;
+
+    .email{
+        align-items: center;
+        padding: 3px 4px;
+        .email-heading{
+
+        }
+
+        .actual-email{
+            background: #F1F1F1;
+            color: #565959;
+            padding: 4px 7px;
+            border-radius: 4px;
+            margin: 10px;
+        }
+    }
+
+    .credits{
+        padding:3px  4px;
+        align-items: center;
+        .credits-heading{
+
+        }
+
+        .credit-point{
+            background: #F1F1F1;
+            color: #565959;
+            padding: 4px 7px;
+            border-radius: 4px;
+            margin: 10px;
+        }
+
+        .credit-request{
+            background-color: #09BC8F;
+            color: #fff;
+            border-radius: 4px;
+            padding: 4px 7px;
+        }
+    }
+
+    .logout-button{
+        width: fit-content;
+        margin: 40px auto;
+        padding: 4px 7px;
+        border: #09BC8F solid ;
+        border-radius : 4px;
+        justify-content: center;
+        
+    }
+}
+
+

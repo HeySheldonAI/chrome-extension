@@ -27,8 +27,8 @@
 	"commands": {
 		"_execute_action": {
 			"suggested_key": {
-				"default": "Ctrl+U",
-				"mac": "Command+U"
+				"default": "Ctrl+Shift+U",
+				"mac": "Command+Shift+U"
 			}
 		}
 	},
@@ -44,7 +44,7 @@
 	"host_permissions": ["https://user.heysheldon.com/"],
 	"incognito": "spanning",
 	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz3JO85K8F4vmowIFOFjshQUgnBS9D6Sy0QaR8USlDe3mJhEjvxxjLmpFJLcqQjwomAfiQqVTe6z/7torpYb1h8nT5fJPNviD8OrrdXrUDPmLOS54ktD1Gmp5xPUcKhwBNildDSvUSL2CTJNDoizAmO7Hnq4HNcM2UJBWrosaSn9Dx4Vyr8q5jkZbGis07xq+o/H7cVR8DCmxVB7BjI7/eA+I0fER5bg48WleygR+cCszItYeYHCm7BxaG8B4WLNB+g5gw7YQD8pK7K0uvuXNPb/t0es9HFGZlK12pfrOq5AR5OQ3bjEJFwAs5Vw3HMq1vyOqWW4+v11zGrkWWv7iUwIDAQAB",
-	"permissions": ["activeTab", "storage", "cookies"],
+	"permissions": ["activeTab", "storage", "cookies", "tabs"],
 	"web_accessible_resources": [
 		{
 			"resources": ["/assets/*"],

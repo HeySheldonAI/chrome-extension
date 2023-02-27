@@ -9,12 +9,26 @@ chrome.action.onClicked.addListener(async (tab) => {
 	});
 });
 
+// Redirects the user to the user dashboard for login
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+	if (request.action === 'sheldon_redirect') {
+		chrome.tabs.create({url: "https://user.heysheldon.com", active: true});
+	}
+});
+
 // Checks if the cookies exist in the user dashboard. Send boolean value to the content script with key: payload: { isLoggedIn: true/false }
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	if (request.action === 'sheldon_check_login') {
-		checkLogin();
-		return true;
+		chrome.cookies.getAll({ url: 'https://user.heysheldon.com', name: 'token' }, (cookies) => {
+			if (cookies) {
+				sendResponse({ loggedIn: true, token: cookies[0].value });
+			} else {
+				sendResponse({ loggedIn: false })
+			}
+			return true;
+		});
 	}
+	return true;
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {

@@ -1,11 +1,22 @@
- /*global chrome*/
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import LoginPage from './loginPage/login.jsx';
+import SearchInterface from './SearchInterface/searchInterface.jsx';
 
 import './SearchPrompt.scss';
 
 const SearchPrompt = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [token, setToken] = useState('');
+
+	useEffect(() => {
+		chrome.runtime.sendMessage({ action: 'sheldon_check_login' }, response => {
+			if (response.loggedIn) {
+				setIsLoggedIn(true);
+				setToken(response.token);
+			}
+		});
+	}, []);
 
 	const handleLogin = () => {
 		console.log("hi")
@@ -31,13 +42,9 @@ const SearchPrompt = () => {
 	return (
 		<div className="search_prompt">
 			{!isLoggedIn ? (
-				<button className="google_login" onClick={handleLogin}>
-					Login
-				</button>
+				<LoginPage />
 			) : (
-				<div className="google_login" onClick={handleLogout}>
-					Logout
-				</div>
+				<SearchInterface token={token} />
 			)}
 			<h1 style={{color:"white"}}>hello</h1>
 		</div>

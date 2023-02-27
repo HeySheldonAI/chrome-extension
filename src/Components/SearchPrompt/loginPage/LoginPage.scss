@@ -1,0 +1,21 @@
+.icon {
+    border-radius: 50%;
+}
+
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+
+    .text {
+        width: 40%;
+    }
+
+    .heading {
+        font-weight: bold;
+    }
+}

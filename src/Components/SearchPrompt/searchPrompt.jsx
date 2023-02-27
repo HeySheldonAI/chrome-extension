@@ -1,12 +1,14 @@
+ /*global chrome*/
 import { useState } from 'react';
 
-import './searchPrompt.scss';
+import './SearchPrompt.scss';
 
 const SearchPrompt = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [token, setToken] = useState('');
 
 	const handleLogin = () => {
+		console.log("hi")
 		chrome.runtime.sendMessage({ action: 'sheldon_login' }, (response) => {
 			console.log(response);
 			if (response.token) {
@@ -37,6 +39,7 @@ const SearchPrompt = () => {
 					Logout
 				</div>
 			)}
+			<h1 style={{color:"white"}}>hello</h1>
 		</div>
 	);
 };

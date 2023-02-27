@@ -1,4 +1,5 @@
-import './helperPopup.scss';
+ /*global chrome*/
+import './HelperPopup.scss';
 
 const HelperPopup = ({ toggleHelperPrompt, toggleSearchPrompt }) => {
 	const handleOpen = () => {

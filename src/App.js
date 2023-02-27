@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import './App.css';
-import SearchPrompt from './components/searchPrompt/searchPrompt';
-import HelperPopup from './components/helperPopup/helperPopup';
+import SearchPrompt from './Components/SearchPrompt/searchPrompt';
+import HelperPopup from './Components/HelperPopup/HelperPopup';
 
 const App = () => {
 	const [isSearchPromptOpen, setIsSearchPromptOpen] = useState(false);
@@ -19,7 +19,7 @@ const App = () => {
 			} else setIsSearchPromptOpen(false);
 		} else setIsSearchPromptOpen(!isSearchPromptOpen);
 	});
-
+	console.log("hello")
 	return isSearchPromptOpen ? (
 		<SearchPrompt toggleSearchPrompt={(val) => setIsSearchPromptOpen(val)} />
 	) : isHelperPopupOpen ? (

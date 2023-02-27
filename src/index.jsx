@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 
-import App from './app';
+import App from './App';
 
 const rootElement = document.createElement('div');
 rootElement.id = 'sheldon-chrome-extension';

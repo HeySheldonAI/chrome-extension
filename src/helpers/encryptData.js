@@ -1,12 +1,28 @@
+// function to encrypt a string or object using AES encryption
 import CryptoJS from 'crypto-js';
 
-const encryptData = (data) => {
-	const dataString = typeof data === 'string' ? data : JSON.stringify(data);
-	const encryptedData = CryptoJS.AES.encrypt(
-		dataString,
-		'5H*Rm7$%hfalesdr4eiwo654@5@Egv35d4f$$2123989822487jsadhf@!87'
-	).toString();
-	return encryptedData;
+// data can be an object or a string
+const encrypt = (data) => {
+	try {
+		const key = '34676sjhkhalk87987123198798ffdhjkjhallbcbcbzzhqy2uyo';
+		// encrypted is an object of type CryptoJS.lib.CypherParams. We have to convert it to string later.
+		// we are stringifying the data because it could be an object. But if it's a string we still need to stringify because in the decrypt function we are parsing the stringified data. So, it's better to stringify it here.
+		const encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), key);
+		return {
+			responseType: 'success',
+			responseUniqueCode: 'encrypted_successfully',
+			responsePayload: encrypted.toString(),
+			responseMessage: 'Encrypted successfully',
+		};
+	} catch (err) {
+		console.log(err);
+		return {
+			responseType: 'error',
+			responseUniqueCode: 'encrypted_error',
+			responsePayload: null,
+			responseMessage: 'Internal error. Please contact the team.',
+		};
+	}
 };
 
-export default encryptData;
+export default encrypt;

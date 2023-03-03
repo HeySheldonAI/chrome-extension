@@ -1,16 +1,18 @@
-// function to generate custom header for testing in the localhost
+import encrypt from './encryptData';
 
-import encryptData from "./encryptData";
-
+// This function generates a custom header for the API calls
+// The header is encrypted using AES-256 encryption
+// The header is a string of the following format:
+// origin::timestamp::randomString
 const generateCustomHeader = () => {
-	const origin = 'sheldon_extension';
+	const origin = 'sheldon_user_dashboard';
 	const timestamp = new Date().getTime();
 	const randomString =
 		Math.random().toString(36).substring(2, 15) +
 		Math.random().toString(36).substring(2, 15);
 
 	const headerString = `${origin}::${timestamp}::${randomString}`;
-	return encryptData(headerString);
+	return encrypt(headerString);
 };
 
 export default generateCustomHeader;

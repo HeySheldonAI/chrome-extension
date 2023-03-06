@@ -46,7 +46,6 @@ const SearchPrompt = () => {
 			) : (
 				<SearchInterface token={token} />
 			)}
-			<h1 style={{color:"white"}}>hello</h1>
 		</div>
 	);
 };

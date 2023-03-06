@@ -27,12 +27,12 @@ const SearchInterface = ({ token }) => {
     return (
         <div className="flex-column">
             <div className="flex">
-                <select className="border-none h-37px option" name="tones" id="tones" onChange={e => setResponseTone(e.target.value)}>
-                    {tones.map(tone => <option value={tone} placeholder="Response Tone">{tone} </option>)}
+                <select className="border-none h-37px optionn" name="tones" id="tones" onChange={e => setResponseTone(e.target.value)}>
+                    {tones.map(tone => <option value={tone} className="border-none h-37px optionn" placeholder="Response Tone">{tone} </option>)}
                 </select>
                 <div className='vl'></div>
-                <input className="border-none input-field" type="text" id="searchfield" placeholder="Write me an Excel formula that . . ." onChange={e => setSearchQuery(e.target.value)} />
-                <button className="border-none h-37px search-button">
+                <input className="border-none input-fieldd" type="text" id="searchfield" placeholder="Write me an Excel formula that..." onChange={e => setSearchQuery(e.target.value)} />
+                <button className="border-none h-37px search-buttonn">
                     <img src={chrome.runtime.getURL('assets/icons/search.svg')} />
                 </button>
             </div>
@@ -64,9 +64,9 @@ const SearchInterface = ({ token }) => {
                   </div>
             </div>
             <div className='hl'></div>
-            <div className="flex footer">
-                <div>Sheldon</div>
-                <img className='setting' onClick={()=>setOnSettingPage(true)} src={chrome.runtime.getURL('assets/icons/setting.svg')} />
+            <div className="flex footerr">
+                <div className='footerr-left'>Sheldon</div>
+                <img className='settingg' onClick={()=>setOnSettingPage(true)} src={chrome.runtime.getURL('assets/icons/setting.svg')} />
             </div>
         </div>
     );
@@ -74,29 +74,36 @@ const SearchInterface = ({ token }) => {
 if(onSettingPage){
     return(
         <div className='flex-column'>
-            <div className='h-37px header flex'>
-                <div className='back' onClick={()=> setOnSettingPage(false)}>Back</div>
-                <div className='heading'>Sheldon</div>
+            <div className='h-37px headerr flex'>
+                <div className='backk flex' onClick={()=> setOnSettingPage(false)}>
+                    <img src={chrome.runtime.getURL('assets/icons/backArrow.svg')} />
+                    &nbsp;Back
+                    </div>
+                <div className='headingg'>Settings</div>
             </div>
             <div className='hl' />
-            <div className='body'>
-                <div className='email flex'>
+            <div className='bodyy'>
+                <div className='emaill flex'>
                     <div className='email-heading'>Email:</div>
                     <div className='actual-email'>hashtodi@gmail.com</div>
                 </div>
-                <div className='credits flex'>
-                    <div className='credits-heading'>Credits:</div>
-                    <div className='credit-point'> 20 </div>
-                    <div className='credit-request'>Request a credit</div>
+                <div className='creditss flex'>
+                    <div className='credits-headingg'>Credits:</div>
+                    <div className='credit-pointt'> 20 </div>
+                    <div className='credit-requestt'>Request credits</div>
                 </div>
                 <div className='logout-button flex'>
                     Logout
                 </div>
+                <div className='flex bodyy-end'>
+                  <a href='#'>Contact</a>
+                  <a href='#'>Report a bug</a>
+                  <a href='#'>Request a feature</a>
+                </div>
             </div>
             <div className='hl' />
-            <div className="flex footer">
-                <div>Sheldon</div>
-                <img className='setting' onClick={()=>setOnSettingPage(true)} src={chrome.runtime.getURL('assets/icons/setting.svg')} />
+            <div className="flex footerr">
+                <div className='footerr-left'>Sheldon</div>
             </div>
         </div>
     )

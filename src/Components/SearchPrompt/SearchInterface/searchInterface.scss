@@ -1,8 +1,11 @@
-.option{
-    border-top-left-radius: 6px;
+.optionn{
+    border-top-left-radius: 6px ;
     text-align: center;
     color: #09BC8F;
     padding: 1px 0;
+    width: 130px;
+    cursor: pointer;
+    
 }
 
 .vl{
@@ -11,17 +14,24 @@
     background-color: lightgray;
 }
 
-.input-field{
+.input-fieldd{
     width:-webkit-fill-available;
     padding: 7px;
     outline: none;
+    border: none;
+    color:black; 
+    margin:0;
+    border:none;
+    font-size: 14px;
 }
 
-.search-button{
+.search-buttonn{
     width: 53px;
     margin: 0;
     border-top-right-radius: 6px;
     padding: 1px 0;
+    background: #09BC8F;
+    cursor: pointer;
 }
 
 .search-suggestion{
@@ -63,17 +73,24 @@
 
     .actual-response{
         padding: 8px;
+        color: #000000;
+        font-size: 14px;
+        line-height: 1.2;
+        font-family: 'Poppins', sans-serif;
     }
 }
 
-.footer{
+.footerr{
     height: 30px;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
     color: #09BC8F;
 
-    .setting{
+    .footerr-left{
+        color: #09BC8F;
+    }
+    .settingg{
         cursor: pointer;
     }
 }
@@ -96,10 +113,7 @@
     flex-direction: column;
 }
 
-.search-button{
-    background: #09BC8F;
 
-}
 
 
 .hl{
@@ -111,10 +125,10 @@
 
 // setting page
 
-.header{
+.headerr{
     padding: 1px 8px;
     align-items: center;
-    .back{
+    .backk{
         justify-self: flex-start;
         margin-right: 200px;
         cursor: pointer;
@@ -122,62 +136,83 @@
 
     }
 
-    .heading{
+    .headingg{
         justify-self: center;
         color: #09BC8F;
     }
 }
 
-.body{
-    height: 200px;
+.bodyy{
+    height: 198px;
 
-    .email{
+    .emaill{
         align-items: center;
         padding: 3px 4px;
+        margin: 7px 12px;
         .email-heading{
-
+                color: #09BC8F;
         }
 
         .actual-email{
             background: #F1F1F1;
-            color: #565959;
-            padding: 4px 7px;
+            color: #8A8C8C;
+            padding: 4px 10px;
             border-radius: 4px;
-            margin: 10px;
+            margin: 0 10px;
         }
     }
 
-    .credits{
+    .creditss{
         padding:3px  4px;
         align-items: center;
-        .credits-heading{
-
+        margin: 7px 12px;
+        .credits-headingg{
+                color: #09BC8F;
         }
 
-        .credit-point{
+        .credit-pointt{
             background: #F1F1F1;
-            color: #565959;
+            color: #8A8C8C;
             padding: 4px 7px;
             border-radius: 4px;
-            margin: 10px;
+            margin: 0 10px;
         }
 
-        .credit-request{
+        .credit-requestt{
             background-color: #09BC8F;
             color: #fff;
             border-radius: 4px;
-            padding: 4px 7px;
+            padding: 4px 16px;
+            box-shadow: 0px 2px 2px 0px #09BC8F33;
+            cursor: pointer;
+
         }
     }
 
     .logout-button{
         width: fit-content;
-        margin: 40px auto;
-        padding: 4px 7px;
-        border: #09BC8F solid ;
+        margin: 48px auto 0;
+        padding: 6px 30px;
+        border: #09BC8F 1px solid ;
         border-radius : 4px;
         justify-content: center;
-        
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        cursor: pointer;
+        color:#000;
+    }
+
+    .bodyy-end{
+        text-align:center; 
+        color: #8A8C8C !important;
+        font-size: 14px !important;
+        justify-content: center !important;
+        justify-items: center !important;                                
+    }
+
+    .bodyy-end a{
+        margin: 10px;
+        color: #8A8C8C;
+        text-decoration:underline ;
     }
 }
 

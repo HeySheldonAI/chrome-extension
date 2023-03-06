@@ -1,38 +1,77 @@
 import './searchInterface.scss';
 import { useEffect, useState } from "react";
 
+import generateCustomHeader from "../../../helpers/generateCustomHeader";
+
 const tones = ["General", "Formal", "Informal", "Optimistic", "Worried", "Friendly", "Curious",
     "Assertive", "Encouraging", "Surprised", "Cooperative"];
 
 const SearchInterface = ({ token }) => {
-    const [responseTone, setResponseTone] = useState('');
+    const [responseTone, setResponseTone] = useState(tones[0]);
     const [searchQuery, setSearchQuery] = useState('');
-    const [onSettingPage, setOnSettingPage]= useState(false)
+    const [onSettingPage, setOnSettingPage]= useState(false);
+    const [user, setUser] = useState({});
 
-    fetch('https://staging.heysheldon.com/api/v1/user/get', {
-        method: 'POST',
-        withCredentials: true,
-        credentials: 'include',
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-        }
-    }).then(res => {
-        const data = JSON.parse(res);
-        console.log(data);
-    })
+    useEffect(() => {
+        let myHeaders = new Headers();
+        myHeaders.append("x-custom-header", `${generateCustomHeader().responsePayload}`);
+        myHeaders.append("Authorization", `Bearer ${token}`);
+        myHeaders.append("Content-Type", "application/json");
+
+        let requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        };
+
+        fetch("https://prod.heysheldon.com/api/v1/user/get", requestOptions)
+        .then(response => response.text())
+        .then(data => {
+            const user = JSON.parse(data).responsePayload
+            setUser(user);
+        })
+        .catch(error => console.log('error', error));
+    }, []);
+
+    const handleSearch = () => {
+        let myHeaders = new Headers();
+        myHeaders.append("x-custom-header", `${generateCustomHeader().responsePayload}`);
+        myHeaders.append("Authorization", `Bearer ${token}`);
+        myHeaders.append("Content-Type", "application/json");
+
+        let body = {
+            searchPrompt: searchQuery,
+            searchTone: responseTone
+        };
+
+        console.log(body)
+
+        let requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: body,
+            user: user
+        };
+
+        fetch("https://prod.heysheldon.com/api/v1/search/new", requestOptions)
+        .then(res => res.text())
+        .then(data => {
+            const response = JSON.parse(data);
+            console.log(response);
+        })
+        .catch(err => console.log(err));
+    }
 
     if(!onSettingPage){
 
     return (
-        <div className="flex-column">
+        <div className="flex-column font-poppins">
             <div className="flex">
                 <select className="border-none h-37px optionn" name="tones" id="tones" onChange={e => setResponseTone(e.target.value)}>
                     {tones.map(tone => <option value={tone} className="border-none h-37px optionn" placeholder="Response Tone">{tone} </option>)}
                 </select>
                 <div className='vl'></div>
                 <input className="border-none input-fieldd" type="text" id="searchfield" placeholder="Write me an Excel formula that..." onChange={e => setSearchQuery(e.target.value)} />
-                <button className="border-none h-37px search-buttonn">
+                <button className="border-none h-37px search-buttonn" onClick={handleSearch}>
                     <img src={chrome.runtime.getURL('assets/icons/search.svg')} />
                 </button>
             </div>
@@ -85,20 +124,20 @@ if(onSettingPage){
             <div className='bodyy'>
                 <div className='emaill flex'>
                     <div className='email-heading'>Email:</div>
-                    <div className='actual-email'>hashtodi@gmail.com</div>
+                    <div className='actual-email'>{ user.email }</div>
                 </div>
                 <div className='creditss flex'>
                     <div className='credits-headingg'>Credits:</div>
-                    <div className='credit-pointt'> 20 </div>
+                    <div className='credit-pointt'>  { user.remainingCredits } </div>
                     <div className='credit-requestt'>Request credits</div>
                 </div>
-                <div className='logout-button flex'>
+                <div className='logout-button flex'  onClick={() => chrome.runtime.sendMessage({ action: 'sheldon_redirect' })}>
                     Logout
                 </div>
                 <div className='flex bodyy-end'>
                   <a href='#'>Contact</a>
                   <a href='#'>Report a bug</a>
-                  <a href='#'>Request a feature</a>
+                  <a href='#'>Request a feature</a> 
                 </div>
             </div>
             <div className='hl' />

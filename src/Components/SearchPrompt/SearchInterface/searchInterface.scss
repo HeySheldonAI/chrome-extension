@@ -1,4 +1,8 @@
-.option{
+.sheldon__font {
+    font-family: 'PoppinsRegular' !important;
+}
+
+.sheldon__option{
     border-top-left-radius: 6px;
     text-align: center;
     color: #09BC8F;
@@ -13,8 +17,11 @@
 
 .input-field{
     width:-webkit-fill-available;
-    padding: 7px;
+    padding: 7px !important;
     outline: none;
+    box-shadow: none !important;
+    margin: 0 !important;
+    font-family: 'Poppins', 'sans-serif';
 }
 
 .search-button{
@@ -26,7 +33,7 @@
 
 .search-suggestion{
     height: 45px;
-    font-size: 12px;
+    font-size: 12px !important;
     padding: 0 8px;
     justify-content: center;
 
@@ -43,7 +50,7 @@
             border: solid 1px #09BC8F;
             border-radius: 45px;
             margin-right: 13px;
-            font-size: 10px;
+            font-size: 10px !important;
             align-items: center;
         }
     }
@@ -56,7 +63,7 @@
     padding: 0 8px;
 
     .response-heading{
-        font-size: 12px;
+        font-size: 12px !important;
         color: #565959;
         padding: 8px;
     }
@@ -80,7 +87,7 @@
 
 
 .border-none{
-    border:none;
+    border:none !important;
 }
 
 .h-37px{
@@ -134,9 +141,6 @@
     .email{
         align-items: center;
         padding: 3px 4px;
-        .email-heading{
-
-        }
 
         .actual-email{
             background: #F1F1F1;
@@ -150,9 +154,6 @@
     .credits{
         padding:3px  4px;
         align-items: center;
-        .credits-heading{
-
-        }
 
         .credit-point{
             background: #F1F1F1;

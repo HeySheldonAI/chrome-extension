@@ -8,7 +8,7 @@ const LoginPage = () => {
     }
 
     return (
-        <div class="content">
+        <div class="sheldon__content">
             <img class="icon" src={chrome.runtime.getURL('assets/icons/icon48.png')} />
             <div class="heading">Welcome to Sheldon</div>
             <p class="text">AI Assistant that Saves 80% of your Time on the Internet</p>

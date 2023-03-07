@@ -6,11 +6,16 @@ import generateCustomHeader from "../../../helpers/generateCustomHeader";
 const tones = ["General", "Formal", "Informal", "Optimistic", "Worried", "Friendly", "Curious",
     "Assertive", "Encouraging", "Surprised", "Cooperative"];
 
+const defaultResponse = 'You can use Sheldon to get ideas for your blogs, new videos, tweets, Linkedin posts. All you have to do is: Select the ‘Creative’ response tone, give Sheldon a prompt like “Write me a Twitter thread on the topic - 10 Physical exercises you can perform at home” and hit enter.'
+
 const SearchInterface = ({ token }) => {
     const [responseTone, setResponseTone] = useState(tones[0]);
     const [searchQuery, setSearchQuery] = useState('');
     const [onSettingPage, setOnSettingPage]= useState(false);
     const [user, setUser] = useState({});
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+    const [sheldonResponse, setSheldonResponse] = useState(defaultResponse)
 
     useEffect(() => {
         let myHeaders = new Headers();
@@ -33,6 +38,7 @@ const SearchInterface = ({ token }) => {
     }, []);
 
     const handleSearch = () => {
+        setLoading(true);
         let myHeaders = new Headers();
         myHeaders.append("x-custom-header", `${generateCustomHeader().responsePayload}`);
         myHeaders.append("Authorization", `Bearer ${token}`);
@@ -41,9 +47,11 @@ const SearchInterface = ({ token }) => {
         let body = {
             searchPrompt: searchQuery,
             searchTone: responseTone
-        };
+        }
 
-        console.log(body)
+        // var urlencoded = new URLSearchParams();
+        // urlencoded.append("searchPrompt", "what is the average of 4, 5, 6");
+        // urlencoded.append("searchTone", "General");
 
         let requestOptions = {
             method: 'POST',
@@ -57,6 +65,9 @@ const SearchInterface = ({ token }) => {
         .then(data => {
             const response = JSON.parse(data);
             console.log(response);
+            setLoading(false);
+            if (response.responseType === 'error') setError(true);
+            else setError(false);
         })
         .catch(err => console.log(err));
     }
@@ -64,13 +75,19 @@ const SearchInterface = ({ token }) => {
     if(!onSettingPage){
 
         return (
-            <div className="flex-column font-poppins">
+            <div className="flex-column sheldon__font">
                 <div className="flex">
-                    <select className="border-none h-37px option" name="tones" id="tones" onChange={e => setResponseTone(e.target.value)}>
+                    <select className="border-none h-37px sheldon__option" name="tones" id="tones" onChange={e => setResponseTone(e.target.value)}>
                         {tones.map(tone => <option value={tone} placeholder="Response Tone">{tone} </option>)}
                     </select>
                     <div className='vl'></div>
-                    <input className="border-none input-field" type="text" id="searchfield" placeholder="Write me an Excel formula that . . ." onChange={e => setSearchQuery(e.target.value)} />
+                    <input 
+                    className="border-none input-field" 
+                    type="text" id="searchfield" 
+                    placeholder="Write me an Excel formula that . . ." 
+                    onChange={e => setSearchQuery(e.target.value)}
+                    onKeyDown={ e => { if (e.key == 'Enter') { handleSearch() } } } 
+                    disabled={ loading ? true : false } />
                     <button className="border-none h-37px search-button" onClick={ handleSearch }>
                         <img src={chrome.runtime.getURL('assets/icons/search.svg')} />
                     </button>
@@ -96,10 +113,8 @@ const SearchInterface = ({ token }) => {
                 <div className="hl"></div> */}
                 <div className='sheldon-response'>
                     <div className='response-heading'>Sheldon's Response</div>
-                    <div className='actual-response'>You can use Sheldon to get ideas for your blogs, new videos, tweets,
-                    Linkedin posts. All you have to do is: Select the ‘Creative’ response tone, give Sheldon a prompt
-                    like “Write me a Twitter thread on the topic - 10 Physical exercises you can perform at home” and 
-                    hit enter.
+                    <div className='actual-response'>
+                        { error ? 'Sheldon seems to be having some troubles. Please try again later.' : loading ? 'Sheldon is thinking...' : sheldonResponse }
                     </div>
                 </div>
                 <div className='hl'></div>

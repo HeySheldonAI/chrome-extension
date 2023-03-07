@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Fragment } from 'react';
 
 import LoginPage from './loginPage/login.jsx';
 import SearchInterface from './SearchInterface/searchInterface.jsx';
 
 import './SearchPrompt.scss';
 
-const SearchPrompt = () => {
+const SearchPrompt = ({ hideSearchPrompt }) => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [token, setToken] = useState('');
 
@@ -18,36 +18,22 @@ const SearchPrompt = () => {
 		});
 	}, []);
 
-	const handleLogin = () => {
-		console.log("hi")
-		chrome.runtime.sendMessage({ action: 'sheldon_login' }, (response) => {
-			console.log(response);
-			if (response.token) {
-				setIsLoggedIn(true);
-				console.log(response.token);
-				setToken(response.token);
-			}
-		});
-	};
-
-	const handleLogout = () => {
-		chrome.runtime.sendMessage(
-			{ action: 'sheldon_logout', token: token },
-			(response) => {
-				console.log(response);
-			}
-		);
-	};
+	const handleClick = () => {
+		chrome.runtime.sendMessage({ action: 'sheldon_hide_search_prompt' });
+	}
 
 	return (
-		<div className="search_prompt">
-			{!isLoggedIn ? (
-				<LoginPage />
-			) : (
-				<SearchInterface token={token} />
-			)}
-			<h1 style={{color:"white"}}>hello</h1>
-		</div>
+		<Fragment>
+			<div className="background" onClick={ handleClick }></div>
+			<div className="search_prompt">
+				{hideSearchPrompt ? '': !isLoggedIn ? (
+					<LoginPage />
+					
+				) : (
+					<SearchInterface token={token} />
+				)}
+			</div>
+		</Fragment>
 	);
 };
 

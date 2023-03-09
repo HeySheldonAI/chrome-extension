@@ -17,7 +17,7 @@ const SearchInterface = ({ token }) => {
     const [error, setError] = useState(false);
     const [sheldonResponse, setSheldonResponse] = useState(defaultResponse)
 
-    useEffect(() => {
+    const getUser = () => {
         let myHeaders = new Headers();
         myHeaders.append("x-custom-header", `${generateCustomHeader().responsePayload}`);
         myHeaders.append("Authorization", `Bearer ${token}`);
@@ -32,10 +32,11 @@ const SearchInterface = ({ token }) => {
         .then(response => response.text())
         .then(data => {
             const user = JSON.parse(data).responsePayload
+            console.log(user);
             setUser(user);
         })
         .catch(error => console.log('error', error));
-    }, []);
+    }
 
     const handleSearch = () => {
         setLoading(true);
@@ -44,20 +45,21 @@ const SearchInterface = ({ token }) => {
         myHeaders.append("Authorization", `Bearer ${token}`);
         myHeaders.append("Content-Type", "application/json");
 
-        let body = {
+        let body = JSON.stringify({
             searchPrompt: searchQuery,
             searchTone: responseTone
-        }
-
-        // var urlencoded = new URLSearchParams();
-        // urlencoded.append("searchPrompt", "what is the average of 4, 5, 6");
-        // urlencoded.append("searchTone", "General");
+        });
 
         let requestOptions = {
             method: 'POST',
             headers: myHeaders,
             body: body,
-            user: user
+            user: JSON.stringify({
+                userId: user.id,
+                fullName: user.fullName,
+                email: user.email,
+                credits: user.remainingCredits
+            })
         };
 
         fetch("https://prod.heysheldon.com/api/v1/search/new", requestOptions)
@@ -65,6 +67,7 @@ const SearchInterface = ({ token }) => {
         .then(data => {
             const response = JSON.parse(data);
             console.log(response);
+            setSheldonResponse(response.responsePayload)
             setLoading(false);
             if (response.responseType === 'error') setError(true);
             else setError(false);
@@ -120,6 +123,7 @@ const SearchInterface = ({ token }) => {
     );
 }
 if(onSettingPage){
+    getUser();
     return(
         <div className='flex-column'>
             <div className='h-37px headerr flex'>

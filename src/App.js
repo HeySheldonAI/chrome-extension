@@ -19,20 +19,15 @@ const App = () => {
 			} else setIsSearchPromptOpen(false);
 		} else setIsSearchPromptOpen(!isSearchPromptOpen);
 	});
-
-	return (
-		<div>
-			{isSearchPromptOpen ? (
-				<span id="search">
-					<SearchPrompt toggleSearchPrompt={(val) => setIsSearchPromptOpen(val)} />
-				</span>
-			) : isHelperPopupOpen ? (
-				<HelperPopup
-					toggleHelperPrompt={(val) => setIsHelperPopupOpen(val)}
-					toggleSearchPrompt={(val) => setIsSearchPromptOpen(val)}
-				/>
-			) : null}
-		</div>);
+	console.log("hello")
+	return isSearchPromptOpen ? (
+		<SearchPrompt toggleSearchPrompt={(val) => setIsSearchPromptOpen(val)} />
+	) : isHelperPopupOpen ? (
+		<HelperPopup
+			toggleHelperPrompt={(val) => setIsHelperPopupOpen(val)}
+			toggleSearchPrompt={(val) => setIsSearchPromptOpen(val)}
+		/>
+	) : null;
 };
 
 export default App;

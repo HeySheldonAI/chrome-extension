@@ -19,7 +19,6 @@ const App = () => {
 			} else setIsSearchPromptOpen(false);
 		} else setIsSearchPromptOpen(!isSearchPromptOpen);
 	});
-	console.log("hello")
 	return isSearchPromptOpen ? (
 		<SearchPrompt toggleSearchPrompt={(val) => setIsSearchPromptOpen(val)} />
 	) : isHelperPopupOpen ? (

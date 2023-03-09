@@ -15,8 +15,8 @@ const LoginPage = () => {
             <button className='login-button' onClick={handleClick}>
                <img className='google-img' src={chrome.runtime.getURL('assets/icons/google.svg')} /> Continue with Google
                 </button>
-            <img className='messy-img' src={chrome.runtime.getURL('assets/icons/unboxing.svg')} />  
-            <img className='unboxing-img' src={chrome.runtime.getURL('assets/icons/messy.svg')} />  
+            <img className='messy-imgg' src={chrome.runtime.getURL('assets/icons/unboxing.svg')} />  
+            <img className='unboxing-imgg' src={chrome.runtime.getURL('assets/icons/messy.svg')} />  
         </div>
     );
 }

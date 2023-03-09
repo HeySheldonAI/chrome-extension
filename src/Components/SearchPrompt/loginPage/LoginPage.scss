@@ -1,4 +1,4 @@
-.icon {
+.iconn {
     border-radius: 50%;
     width: 42px;
     height: 42px;
@@ -7,7 +7,7 @@
 }
 
 
-.content {
+.contentt {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
 
 
 
-    .text {
+    .textt {
         width: 70%;
         color: #565959;
         font-size: 14px;
@@ -29,7 +29,7 @@
         margin-bottom:12px;
     }
 
-    .heading {
+    .headingg {
         font-weight: bold;
         font-size: 24px;
         font-weight: 600;
@@ -40,7 +40,7 @@
         
     }
 
-    .login-button {
+    .login-buttonn {
         border-radius: 62px;
         padding: 7px 20px;
         border: solid 3px #09BC8F;
@@ -52,20 +52,23 @@
         display: flex;
         align-items: center;
         background-color: #fff;
+        box-shadow: 0px 2px 4px 0px #09BC8F1F;
+        color: #000;
 
-        .google-img{
+
+        .google-imgg{
             margin-right: 8px;
         }
     }
 }
 
-.messy-img{
+.messy-imgg{
     position: absolute;
     left: 0;
     bottom: 0;
 }
 
-.unboxing-img{
+.unboxing-imgg{
     position: absolute;
     right: 0;
     bottom: 0;

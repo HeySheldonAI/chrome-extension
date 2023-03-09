@@ -23,6 +23,13 @@ const SearchPrompt = ({ hideSearchPrompt }) => {
 	}
 
 	return (
+		<div className="search_prompt">
+			{!isLoggedIn ? (
+				<LoginPage />
+			) : (
+				<SearchInterface token={token} />
+			)}
+		</div>
 		<Fragment>
 			<div className="background" onClick={ handleClick }></div>
 			<div className="search_prompt">

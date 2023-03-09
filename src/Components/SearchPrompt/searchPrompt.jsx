@@ -5,7 +5,7 @@ import SearchInterface from './SearchInterface/searchInterface.jsx';
 
 import './SearchPrompt.scss';
 
-const SearchPrompt = ({ hideSearchPrompt }) => {
+const SearchPrompt = ({ toggleSearchPrompt }) => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [token, setToken] = useState('');
 
@@ -18,22 +18,15 @@ const SearchPrompt = ({ hideSearchPrompt }) => {
 		});
 	}, []);
 
-	const handleClick = () => {
-		chrome.runtime.sendMessage({ action: 'sheldon_hide_search_prompt' });
+	const hideSearchPrompt = () => {
+		toggleSearchPrompt(false);
 	}
 
 	return (
-		<div className="search_prompt">
-			{!isLoggedIn ? (
-				<LoginPage />
-			) : (
-				<SearchInterface token={token} />
-			)}
-		</div>
 		<Fragment>
-			<div className="background" onClick={ handleClick }></div>
+			<div className="background" onClick={ hideSearchPrompt }></div>
 			<div className="search_prompt">
-				{hideSearchPrompt ? '': !isLoggedIn ? (
+				{ !isLoggedIn ? (
 					<LoginPage />
 					
 				) : (

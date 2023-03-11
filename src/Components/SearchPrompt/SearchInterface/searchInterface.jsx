@@ -66,8 +66,7 @@ const SearchInterface = ({ token }) => {
         .then(res => res.text())
         .then(data => {
             const response = JSON.parse(data);
-            console.log(response);
-            setSheldonResponse(response.responsePayload)
+            setSheldonResponse(response.responsePayload.gpt3Response.text)
             setLoading(false);
             if (response.responseType === 'error') setError(true);
             else setError(false);
@@ -117,13 +116,12 @@ const SearchInterface = ({ token }) => {
             <div className='hl'></div>
             <div className="flex footerr">
                 <div className='footerr-left'>Sheldon</div>
-                <img className='settingg' onClick={()=>setOnSettingPage(true)} src={chrome.runtime.getURL('assets/icons/setting.svg')} />
+                <img className='settingg' onClick={()=>{getUser(); setOnSettingPage(true);}} src={chrome.runtime.getURL('assets/icons/setting.svg')} />
             </div>
         </div>
     );
 }
 if(onSettingPage){
-    getUser();
     return(
         <div className='flex-column'>
             <div className='h-37px headerr flex'>

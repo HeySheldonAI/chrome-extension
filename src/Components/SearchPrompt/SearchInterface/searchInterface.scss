@@ -1,5 +1,5 @@
 .sheldon__font {
-    font-family: 'PoppinsRegular' !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .sheldon__option {
@@ -15,8 +15,9 @@
 button,
 input,
 select,
-textarea {
-    font: initial;
+textarea,
+option {
+    font-family: 'Poppins', sans-serif;
 }
 
 .vl {
@@ -31,7 +32,7 @@ textarea {
     outline: none;
     box-shadow: none !important;
     margin: 0 !important;
-    font-family: 'PoppinsRegular';
+    font-family: 'Poppins', sans-serif;
     color: black;
     border: none;
     font-size: 14px;
@@ -88,6 +89,7 @@ textarea {
             font-size: 12px !important;
             color: #565959;
             padding: 8px;
+            font-family: 'Poppins', sans-serif;
         }
 
         .actual-response {
@@ -95,7 +97,7 @@ textarea {
             color: #000000;
             font-size: 14px;
             line-height: 1.2;
-            font-family: 'PoppinsRegular';
+            font-family: 'Poppins', sans-serif;
         }
     }
 }
@@ -106,6 +108,8 @@ textarea {
     justify-content: space-between;
     padding: 0 16px;
     color: #09BC8F;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
 
     .footerr-left {
         color: #09BC8F;
@@ -122,7 +126,7 @@ textarea {
 }
 
 .h-37px {
-    height: 37px;
+    height: 37px !important;
 }
 
 .flexx {
@@ -150,6 +154,8 @@ textarea {
 .headerr {
     padding: 1px 8px;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
+    
 
     .backk {
         justify-self: flex-start;
@@ -162,20 +168,29 @@ textarea {
     .headingg {
         justify-self: center;
         color: #09BC8F;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+
     }
 }
 
 .bodyy {
     height: 198px;
     line-height: 1.2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
 
     .emaill {
         align-items: center;
         padding: 3px 4px;
         margin: 7px 12px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
 
         .email-heading {
             color: #09BC8F;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
         }
 
         .actual-email {
@@ -184,6 +199,8 @@ textarea {
             padding: 4px 10px;
             border-radius: 4px;
             margin: 0 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
         }
     }
 
@@ -191,9 +208,13 @@ textarea {
         padding: 3px 4px;
         align-items: center;
         margin: 7px 12px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
 
         .credits-headingg {
             color: #09BC8F;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
         }
 
         .credit-pointt {
@@ -202,6 +223,8 @@ textarea {
             padding: 4px 7px;
             border-radius: 4px;
             margin: 0 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
         }
 
         .credit-requestt {
@@ -211,10 +234,14 @@ textarea {
             padding: 4px 16px;
             box-shadow: 0px 2px 2px 0px #09BC8F33;
             cursor: pointer;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
 
             a {
                 color: #fff;
                 text-decoration: none;
+                font-size: 14px;
+                font-family: 'Poppins', sans-serif;
             }
 
         }
@@ -230,6 +257,8 @@ textarea {
         box-shadow: 0px 2px 2px 0px #0000001A;
         cursor: pointer;
         color: #000;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
     }
 
     .bodyy-end {
@@ -238,11 +267,15 @@ textarea {
         font-size: 14px !important;
         justify-content: center !important;
         justify-items: center !important;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
     }
 
     .bodyy-end a {
         margin: 10px;
         color: #8A8C8C;
         text-decoration: underline;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
     }
 }

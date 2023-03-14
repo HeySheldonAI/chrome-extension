@@ -77,8 +77,8 @@ const SearchInterface = ({ token }) => {
     if(!onSettingPage){
 
     return (
-        <div className="flex-column font-poppins">
-            <div className="flex">
+        <div className=" flexx-column font-poppins">
+            <div className=" flexx">
                 <select className="border-none h-37px sheldon__option" name="tones" id="tones" onChange={e => setResponseTone(e.target.value)}>
                     {tones.map(tone => <option value={tone} className="border-none h-37px sheldon__option" placeholder="Response Tone">{tone} </option>)}
                 </select>
@@ -89,18 +89,18 @@ const SearchInterface = ({ token }) => {
                 </button>
             </div>
             <div className="hl"></div>
-            {/* <div className='search-suggestion flex-column'>
+            {/* <div className='search-suggestion  flexx-column'>
                 <div className='div1'>Search Suggestions</div>
-                <div className='div2 flex'>
-                    <button className='suggestion-button flex'>
+                <div className='div2  flexx'>
+                    <button className='suggestion-button  flexx'>
                         <img src={chrome.runtime.getURL('assets/icons/Lightbulb.svg')}  />
                         <div>Write excel formula for:  </div>
                     </button>
-                    <button className='suggestion-button flex'>
+                    <button className='suggestion-button  flexx'>
                         <img src={chrome.runtime.getURL('assets/icons/Lightbulb.svg')}  />
                         <div>How to merge columns in Excel  </div>
                     </button>
-                    <button className='suggestion-button flex'>
+                    <button className='suggestion-button  flexx'>
                         <img src={chrome.runtime.getURL('assets/icons/Lightbulb.svg')}  />
                         <div>How to merge columns in Excel  </div>
                     </button>
@@ -108,13 +108,15 @@ const SearchInterface = ({ token }) => {
             </div>
             <div className="hl"></div> */}
             <div className='sheldon-response'>
+                <div className='response-div'>
                 <div className='response-heading'>Sheldon's Response</div>
                 <div className='actual-response'>
                     { error ? 'Sheldon seems to be having some troubles. Please try again later.' : loading ? 'Sheldon is thinking...' : sheldonResponse }
                 </div>
+                </div>
             </div>
             <div className='hl'></div>
-            <div className="flex footerr">
+            <div className=" flexx footerr">
                 <div className='footerr-left'>Sheldon</div>
                 <img className='settingg' onClick={()=>{getUser(); setOnSettingPage(true);}} src={chrome.runtime.getURL('assets/icons/setting.svg')} />
             </div>
@@ -123,9 +125,9 @@ const SearchInterface = ({ token }) => {
 }
 if(onSettingPage){
     return(
-        <div className='flex-column'>
-            <div className='h-37px headerr flex'>
-                <div className='backk flex' onClick={()=> setOnSettingPage(false)}>
+        <div className=' flexx-column'>
+            <div className='h-37px headerr  flexx'>
+                <div className='backk  flexx' onClick={()=> setOnSettingPage(false)}>
                     <img src={chrome.runtime.getURL('assets/icons/backArrow.svg')} />
                     &nbsp;Back
                     </div>
@@ -133,26 +135,26 @@ if(onSettingPage){
             </div>
             <div className='hl' />
             <div className='bodyy'>
-                <div className='emaill flex'>
+                <div className='emaill  flexx'>
                     <div className='email-heading'>Email:</div>
                     <div className='actual-email'>{ user.email }</div>
                 </div>
-                <div className='creditss flex'>
+                <div className='creditss  flexx'>
                     <div className='credits-headingg'>Credits:</div>
                     <div className='credit-pointt'>  { user.remainingCredits } </div>
-                    <div className='credit-requestt'>Request credits</div>
+                    <div className='credit-requestt'><a href="https://buy.stripe.com/eVaeXV0tQ4GU46s9AA">Request credits</a></div>
                 </div>
-                <div className='logout-button flex'  onClick={() => chrome.runtime.sendMessage({ action: 'sheldon_redirect' })}>
+                <div className='logout-button  flexx'  onClick={() => chrome.runtime.sendMessage({ action: 'sheldon_redirect' })}>
                     Logout
                 </div>
-                <div className='flex bodyy-end'>
-                  <a href='#'>Contact</a>
-                  <a href='#'>Report a bug</a>
-                  <a href='#'>Request a feature</a> 
+                <div className=' flexx bodyy-end'>
+                  <a href='https://wa.me/917895292559'>Contact</a>
+                  <a href='mailto:daksh@mysticlabs.ai?subject=I%20want%20to%20report%20a%20bug'>Report a bug</a>
+                  <a href='mailto:daksh@mysticlabs.ai?subject=I%20would%20like%20to%20request%20a%20feauture'>Request a feature</a> 
                 </div>
             </div>
             <div className='hl' />
-            <div className="flex footerr">
+            <div className=" flexx footerr">
                 <div className='footerr-left'>Sheldon</div>
             </div>
         </div>
